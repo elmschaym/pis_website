@@ -1,0 +1,11 @@
+<br>
+
+<div style="max-width: 90%; margin-left: 5% " >
+{% if news %}
+<h4 class="page-header"  ><b style="color: black; " >{{news.subject}}</b></h4>
+
+	{{news.description|safe }}
+
+{% endif %}
+
+</div>

@@ -1,0 +1,28 @@
+angular.module('app.controllers').controller('EvaluationCtrl', function($scope){
+    /*$scope.grade1 = false;
+    $scope.grade2 = false;
+    $scope.grade3 = false;
+    $scope.grade4 = false;
+    $scope.grade5 = false;
+    $scope.grade6 = false;
+    $scope.grade7 = false;
+    $scope.grade8 = false;
+    $scope.grade9 = false;
+    $scope.grade10 = false;
+    $scope.grade11 = false;
+    $scope.grade12 = false;
+    $scope.grade13 = false;
+    $scope.grade14 = false;
+    */
+
+    $scope.pop = function(){
+	alert("Simple");
+    }
+
+});
+
+
+function showEntryGradeDiv(id){
+    $("#"+id).css('display', 'block');
+}
+

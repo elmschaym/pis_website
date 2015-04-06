@@ -1,0 +1,91 @@
+	<table class="table" style="margin-top: 20px;">
+		<tr style="background-color: #009240;">
+			<td colspan="3"><b><h4 style="margin: 0px; color: #e7ebac;">Basic Information</h4></b></td>
+		</tr>
+		<tr>
+			<td style="width: 25%;"><b>ID number:</b></td>
+			<td>{{ student.studentid }}</td>
+		</tr>
+		<tr>
+			<td><b>Firstname:</b></td>
+			<td>{{ student.firstname }}</td>
+		</tr>
+		<tr>
+			<td><b>Middlename:</b></td>
+			<td>{{ student.middlename }}</td>
+		</tr>
+		<tr>
+			<td><b>Lastname:</b></td>
+			<td>{{ student.lastname }}</td>
+		</tr>
+		<tr>
+			<td><b>Gender:</b></td>
+			<td>{{ student.get_gender_display }}</td>
+		</tr>
+		<tr>
+			<td><b>Date of birth:</b></td>
+			<td>{{ student.date_of_birth }}</td>
+		</tr>
+		<tr>
+			<td><b>Address:</b></td>
+			<td>{{ student.address }}</td>
+		</tr>
+		<tr>
+			<td><b>Contact number:</b></td>
+			<td>{{ student.cell_no }}</td>
+		</tr>
+		<tr style="background-color: #009240;">
+			<td colspan="3"><b><h4 style="margin: 0px; color: #e7ebac; ">Guardian's Information</h4></b></td>
+		</tr>
+		<tr>
+			<td><b>Father's name:</b></td>
+			<td>{{ student.father_name }}</td>
+		</tr>
+		<tr>
+			<td><b>Father's Occupation</b></td>
+			<td>{{ student.father_occ }}</td>
+		</tr>
+		<tr>
+			<td><b>Mother's name:</b></td>
+			<td>{{ student.mother_name }}</td>
+		</tr>
+		<tr>
+			<td><b>Mother's Occupation:</b></td>
+			<td>{{ student.mother_occ }}</td>
+		</tr>
+		<tr style="background-color: #009240;">
+			<td colspan="3"><b><h4 style="margin: 0px; color: #e7ebac; ">School Information</h4></b></td>
+		</tr>
+		<tr>
+			<td><b>Date admitted:</b></td>
+			<td>{{ student.date_admitted }}</td>
+		</tr>
+		<tr>
+			<td><b>Academic status:</b></td>
+			<td>{{ student.get_acad_status_display }}</td>
+		</tr>
+		<tr>
+			<td><b>Grade/Year level:</b></td>
+			<td>{{ student.get_year_level_display }}</td>
+		</tr>
+		<tr>
+			<td><b>Section:</b></td>
+			{%if section%}
+    		      <td>{{ section.section | capfirst }}</td>
+            {%else%}
+                  <td>No Section</td>
+            {%endif%}
+		</tr>
+		<tr>
+			<td><b>School privilege:</b></td>
+			<td>{{ student.privilege }}</td>
+		</tr>
+		<tr>
+			<td><b>Previous School:</b></td>
+			<td>{{ student.last_school_att }}</td>
+		</tr>
+		<tr>
+			<td><b>Previous school address:</b></td>
+			<td>{{ student.last_school_att_address }}</td>
+		</tr>
+	</table>

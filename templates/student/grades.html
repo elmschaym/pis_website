@@ -1,0 +1,118 @@
+					<!-- <h4>
+						<b>
+              				{% if final_average > 0 %}
+          						{% if final_average >= 96 %}
+          							Excellent
+          						{% elif final_average >= 93 and final_average < 96 %}
+          							Outstanding
+          						{% endif %}
+              				{% elif q4_average > 0 %}
+          						{% if q4_average >= 96 %}
+          							Excellent
+          						{% elif q4_average >= 93 and q4_average < 96 %}
+          							Outstanding
+          						{% endif %}
+              				{% elif q3_average > 0 %}
+          						{% if q3_average >= 96 %}
+          							Excellent
+          						{% elif q3_average >= 93 and q3_average < 96 %}
+          							Outstanding
+          						{% endif %}
+              				{% elif q2_average > 0 %}
+          						{% if q2_average >= 96 %}
+          							Excellent
+          						{% elif q2_average >= 93 and q2_average < 96 %}
+          							Outstanding
+          						{% endif %}
+          					{% elif q1_average > 0 %}
+          						{% if q1_average >= 96 %}
+          							Excellent
+          						{% elif q1_average >= 93 and q1_average < 96 %}
+          							Outstanding
+          						{% endif %}
+          					{% endif %}
+      					</b>
+      				</h4> -->
+      				<div class="alert alert-info" style="border-radius: 0px; margin-top: 20px; margin-bottom: 0px; font-size: 12px;">
+						<span class="glyphicon glyphicon-info-sign"></span>
+						The grades shown in the "Final Grade" will be temporary until you have all your grades for this school year.
+					</div>
+					<table class="table"  style="margin-top: 0px;">
+    					<tr style="background-color: #009240; color: #e7ebac;">
+    						<td style="padding: 5px;"><b>Subject Name</b></td>
+    						<td style="padding: 5px;"><b>First Quarter</b></td>
+    						<td style="padding: 5px;"><b>Second Quarter</b></td>
+    						<td style="padding: 5px;"><b>Third Quarter</b></td>
+    						<td style="padding: 5px;"><b>Fourth Quarter</b></td>
+    						<td style="padding: 5px;"><b>Final Grade</b></td>
+    					</tr>
+    					{% for name, grade in grades %}
+        					<tr>
+        						<td style="padding: 5px;"><b>{{ name }}</b></td>
+    							<td style="padding: 5px;">
+    								{% if grade.q1 != None %}
+    									{% if grade.q1 >= 75 %}
+    										{{ grade.q1|floatformat:"2" }}
+    									{% else %}
+    										<b style="color: red;">{{ grade.q1|floatformat:"2" }}</b>
+    									{% endif %}
+    								{% else %}
+    									No grade yet.
+    								{% endif%}
+    								
+    							</td>
+        						<td style="padding: 5px;">
+									{% if grade.q2 %}
+    									{% if grade.q2 >= 75 %}
+    										{{ grade.q2|floatformat:"2" }}
+    									{% else %}
+    										<b style="color: red;">{{ grade.q2|floatformat:"2" }}</b>
+    									{% endif %}
+    								{% else %}
+    									No grade yet.
+    								{% endif%}
+								</td>
+    							<td style="padding: 5px;">
+									{% if grade.q3 %}
+    									{% if grade.q3 >= 75 %}
+    										{{ grade.q3|floatformat:"2" }}
+    									{% else %}
+    										<b style="color: red;">{{ grade.q3|floatformat:"2" }}</b>
+    									{% endif %}
+    								{% else %}
+    									No grade yet.
+    								{% endif%}
+								</td>
+    							<td style="padding: 5px;">
+									{% if grade.q4 %}
+    									{% if grade.q4 >= 75 %}
+    										{{ grade.q4|floatformat:"2" }} 
+    									{% else %}
+    										<b style="color: red;">{{ grade.q4|floatformat:"2" }}</b>
+    									{% endif %}
+    								{% else %}
+    									No grade yet.
+    								{% endif%}
+								</td>
+    							<td style="padding: 5px;">
+									{% if grade.final %}
+    									{% if grade.final >= 75 %}
+    										{{ grade.final|floatformat:"2" }} 
+    									{% else %}
+    										<b style="color: red;">{{ grade.final|floatformat:"2"  }}</b>
+    									{% endif %}
+    								{% else %}
+    									No grade yet.
+    								{% endif%}
+								</td>
+        					</tr>
+    					{% endfor %}
+    					<tr class="navbar-inverse" style="color: white;">
+    						<td style="padding: 5px;"><b>Average</b></td>
+    						<td style="padding: 5px;"><b></b></td>
+    						<td style="padding: 5px;"><b></b></td>
+    						<td style="padding: 5px;"><b></b></td>
+    						<td style="padding: 5px;"><b></b></td>
+    						<td style="padding: 5px;"><b>{{ final_average|floatformat:"2" }}</b></td>
+    					</tr>
+    				</table>

@@ -1,0 +1,35 @@
+$('#gen_stud_id_btn').click(function(){
+    $.ajax({
+	url : '/registration/generate_student_id',
+	
+	dataType : 'html',
+	success : function(data){
+	    $("#id_studentid").val(data);
+	}
+    });
+});
+
+$("#id_studentid").keydown(function(e){
+    return allNumbers(e);
+});
+
+
+$("#all_student_grade_checkbox").click(function(){
+    $(".studentgrade_check_box").prop('checked', this.checked);
+});
+
+
+$(".studentgrade_check_box").change(function(){
+    var checkall = ($(".studentgrade_check_box").filter(":checked").length == $(".studentgrade_check_box").length);
+    $("#all_student_grade_checkbox").prop("checked", checkall);
+});
+
+
+function showStudentEvaluation(){
+    var data = {student_id : $("#student_id").val(),
+	       level_type  : $("#level_type").val()}
+    $.get("/registration/student_evaluation/", data, function(rs){
+	$("#evaluation").html(rs);
+    });
+}
+

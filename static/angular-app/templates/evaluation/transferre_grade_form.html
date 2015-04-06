@@ -1,0 +1,84 @@
+<div class="modal-header">
+  <h4 class="modal-title">Grade Entry Form</h4>
+</div>
+<div class="modal-body">
+  <div class="form-group">
+    <label ng-bind="year_level_desc"></label>
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="School Name" class="form-control input-sm" ng-model="year_grades.school">
+  </div>
+  <div class="form-group">
+    <input type="text" placeholder="School Year" class="form-control input-sm" style="width:100px;" ng-model="year_grades.school_year">
+  </div>
+  <hr>
+  <table class="table table-condensed table-bordered">
+    <tr>
+      <th>Subject</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Final</th>
+      <th>Units</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><input type="text" ng-model="grade.subject" class="form-control input-sm"></td>
+      <td style="width: 60px;"><input type="text" ng-model="grade.q1" class="form-control input-sm"></td>
+      <td style="width: 60px;"><input type="text" ng-model="grade.q2" class="form-control input-sm"></td>
+      <td style="width: 60px;"><input type="text" ng-model="grade.q3" class="form-control input-sm"></td>
+      <td style="width: 60px;"><input type="text" ng-model="grade.q4" class="form-control input-sm"></td>
+      <td style="width: 60px;"><input type="text" ng-model="grade.final" class="form-control input-sm"></td>
+      <td style="width: 60px;"><input type="text" ng-model="grade.units" class="form-control input-sm"></td>
+      <td style="width: 50px;">
+	<button ng-click="add_subject()" class="btn btn-success btn-sm">
+	  <span class="glyphicon glyphicon-plus-sign"></span>&nbsp;
+	</button>
+      </td>
+    </tr>
+  </table>
+  </br>
+  <table class="table table-condensed table-bordered">
+    <thead>
+      <tr class="navbar-default">
+	<th>Subject</th>
+	<th>Q1</th>
+	<th>Q2</th>
+	<th>Q3</th>
+	<th>Q4</th>
+	<th>Final</th>
+	<th>Units</th>
+	<th style="text-align:right"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="grade_row in grades_entered">
+	<td ng-bind="grade_row.subject"></td>
+	<td ng-bind="grade_row.q1" style="width: 60px;"></td>
+	<td ng-bind="grade_row.q2" style="width: 60px;"></td>
+	<td ng-bind="grade_row.q3" style="width: 60px;"></td>
+	<td ng-bind="grade_row.q4" style="width: 60px;"></td>
+	<td ng-bind="grade_row.final" style="width: 60px;"></td>
+	<td ng-bind="grade_row.units" style="width: 60px;"></td>
+	<td align="right" style="width: 150px;">
+	  <a href="" class="btn btn-default btn-xs">
+	    <span class="glyphicon glyphicon-pencil"></span>&nbsp;Edit
+	  </a>&nbsp;
+	  <a href="" class="btn btn-danger btn-xs">
+	    <span class="glyphicon glyphicon-remove text-danger"></span>&nbsp;Delete
+	  </a>
+	</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <div class="form-group">
+    <label>Average</label>
+    <input type="number" class="form-control input-sm" ng-model="year_grades.average" placeholder="Average" style="width:100px;">
+  </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="save()">Save</button>
+  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

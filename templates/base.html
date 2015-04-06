@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+      {%block title%}{{ system_name }}{%endblock%}
+    </title>
+
+    <link rel="shortcut icon" href="{{STATIC_URL}}images/pis_logo.png">
+
+    <link href="/static/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/static/css/my_style.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/static/css/font-awesome-4.3.0/css/font-awesome.css" media="all" rel="stylesheet" type="text/css" />
+
+    {% block extra_css %}{% endblock extra_css%}
+  </head>
+
+  <body class="container" style="min-height: 700px; ">
+  
+  <div class="col-md-12" style="padding: 0px; -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 1); -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 1); box-shadow: 0px 0px 8px rgba(0, 0, 0, 1); " > 
+
+
+    <img src="/static/images/PIS-Header.png" style="width: 100%;">
+    
+    <nav class="navbar navbar-inverse" role="navigation" style="border-radius:0; border-top: 1px solid #056c32; border-bottom: 1px solid #056c32; border-left: 0; border-right: 0; background-color: #009240; margin-bottom: 0px;">
+
+      <div class="container-fluid">      
+        <div  class="navbar-header" >
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+          {% block navbar %}
+            <li class="{{home}}"><a href="/">Home</a></li>
+            <li class="{{student_hov}}" ><a href="/student/">Student</a></li>
+            <li class="{{rtm}}" ><a  href="#">Real Time Monitoring</a>
+            <li class="{{contactus}}" ><a href="/contact/index">Contact Us</a></li>
+            <li class="{{aboutus}}">
+              <a  data-toggle="dropdown"  href="#">About us <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/philosophy">Philosophy</a></li>
+                <li><a href="/mission">Mission</a></li>
+                <li><a href="">Vision</a></li>
+                <li><a href="">Objectives</a></li>
+                <li><a href="">Rules & Regulations</a></li>
+                <li><a href="/employee/boardoftrustees">Board of Trustees</a></li>
+                <li><a href="/employee/administrative">Administrative Officials</a></li>
+                <li><a href="/employee/execom">Executive Committee</a></li>
+              </ul>
+            </li>
+          {% endblock navbar %}
+          </ul>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+
+    {% block content %}{% endblock content %}
+
+    {% block footer %}
+      <footer class="col-md-12" style=" margin-top: 40px;">
+        <div style="border-top: 1px solid #056c32;">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#" style="color: #056c32;">
+                &copy;
+                Philippine Integrated School Foundation Inc.
+              </a>
+            </li>
+            <li>
+              <a href="#" style="color: #056c32;">
+                Allrights Reserved 2015
+              </a>
+            </li>
+            <li>
+              <a  href="/employee/developers" style="color: #056c32;">
+                Developers
+              </a>
+            </li><li>
+              <a href="#" style="color: #056c32;">
+                Suggestions
+              </a>
+            </li>
+            <li>
+              <a href="#" style="color: #056c32;">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    {% endblock footer%}
+
+  </div>
+      
+
+  <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/static/js/pis_website.js"></script> 
+  <script type="text/javascript" src="/static/components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/static/angular-app/app.js"></script>
+  <script src="/static/angular-app/services/events_svc.js"></script>
+  <script src="/static/angular-app/controllers/events_ctrl.js"></script>
+  
+  {% block extra_js %}{% endblock extra_js %}
+    
+  </body>
+</html>

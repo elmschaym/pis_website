@@ -1,0 +1,25 @@
+<div class="modal-heading">
+  <h4 class="heading-title"></h4>
+</div>
+<div class="modal-body">
+  <table class="table table-condensed">
+    <tr>
+      <th>Subject</th>
+      <th>Q1</th>
+      <th>Q2</th>
+      <th>Q3</th>
+      <th>Q4</th>
+      <th>Final</th>
+      <th>Units</th>
+    </tr>
+    <tr>
+      <td><input type="text" ng-model=""></td>
+      <td><input type="text" ng-model=""></td>
+      <td><input type="text" ng-model=""></td>
+      <td><input type="text" ng-model=""></td>
+      <td><input type="text" ng-model=""></td>
+      <td><input type="text" ng-model=""></td>
+      <td><input type="text" ng-model=""></td>
+    </tr>
+  </table>
+</div>

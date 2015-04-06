@@ -1,0 +1,25 @@
+<div class="alert alert-info" style="border-radius: 0px; margin-top: 20px; margin-bottom: 0px; font-size: 12px;">
+	<span class="glyphicon glyphicon-info-sign"></span>
+	The bills shown below are the balance which have not yet been paid for this school year. 
+</div>
+{% if bills %}
+<table class="table"  style="margin-top: 0px;">
+	<tr style="background-color: #009240; color: #e7ebac;">
+		<td style=""><b>Item</b></td>
+		<td style=""><b>Amount</b></td>
+	</tr>  
+	{% for bill in bills %}
+	<tr>    
+		<td>{{ bill.bill_item_name }}</td>
+		<td style="">{{  bill.balance }}</td>
+	</tr>
+	{% endfor %}
+	<tr>
+		<td style=""><h4>Total</h4></td>
+		<td style=""><h4 style="padding: 0; color: #790000" id="total">{{ total }}</h4></td>
+	</tr>
+</table>
+
+{% else %}
+	<h1>This student currently has no bills.</h1>
+{% endif %}

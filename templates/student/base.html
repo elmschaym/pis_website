@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="col-md-12" style="min-height: 300px;">
+	<div class="col-md-12" style="margin-top: 20px;">
+		<div class="col-md-4">
+			<div class="col-md-12">
+				<img class="img img-rounded" src="/static/images/pis_logo.png" style="border: 1px solid #888;"/>	
+			</div>
+			<div class="col-md-12" style="margin-top: 10px;">
+				<table class="table table-striped table-condensed">
+					<tr>
+						<td>
+							<h4>
+								<b>
+								{{ student.lastname }}, &nbsp;
+								{{ student.firstname }} &nbsp;
+								{{ student.middlename|slice:":1" }}.
+								</b>
+							</h4>			
+						</td>
+					</tr>
+					<tr>
+						<td><b>{{ student.studentid }}</b></td>
+					</tr>
+					<tr>
+						<td  style="padding: 0px;">
+							<button onclick="location.href='/student/logout/'" class="btn btn-default" style="width: 100%; background-color: #009240;  border-radius: 0px;">
+								<strong style="color: white;">LOGOUT</strong>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</div>	
+		</div>
+		
+		<div class="col-md-8">
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="active"><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+				<li><a href="#payment" role="tab" data-toggle="tab">Payment Status</a></li>
+				<li><a href="#evaluation" role="tab" data-toggle="tab">Grade Evaluation</a></li>
+				<li><a href="#attendance_and_behaviour" role="tab" data-toggle="tab">Attendance & Behaviour</a></li>
+			</ul>
+			
+			
+			<div class="tab-content" id="tab_content">
+				<div class="tab-pane active" id="profile">
+					{% include 'student/profile.html' %}
+				</div>
+				<div class="tab-pane" id="payment">
+					{% include 'student/bills.html'%}
+				</div>
+  				<div class="tab-pane" id="evaluation">
+  					{% include 'student/grades.html'%}
+				</div>
+				<div class="tab-pane" id="attendance_and_behaviour">
+					{% include 'student/attendance_and_behaviour.html'%}
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+{% endblock content %}
