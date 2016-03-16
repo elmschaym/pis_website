@@ -10,17 +10,20 @@ urlpatterns = patterns('',
                        # Examples:
                        # url(r'^$', 'pis_website.views.home', name='home'),
                        # url(r'^blog/', include('blog.urls')),
-
+                       url(r'^pis_admin/student/csv_student/$', csv_student),
+                       url(r'^pis_admin/student/csv_financial/$', csv_financial),
+                       url(r'^pis_admin/student/csv_grades/$', csv_grades),
                        url(r'^pis_admin/', include(admin.site.urls)),
                        url(r'^$', index),
                        url(r'news/$', news),
                        url(r'events/$', events),
                        url(r'news_view_more/$', news_limit),
+                       url(r'real_monitoring/$', real_monitoring),
                        url(r'news_view_more_event/$', news_limit_events),
                        url(r'^events/', include('events.urls')),
                        url(r'^employee/', include('employee.urls')),
                        url(r'^student/', include('student.urls')),    
-                       url(r'^contact/', include('contact.urls')),    
+                       url(r'^contact/', include('contact.urls')),  
 
 )
 urlpatterns += patterns(

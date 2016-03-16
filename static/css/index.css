@@ -1,0 +1,300 @@
+
+/*****************************Bootstrap Overrides************************************/
+.navbar-default {
+	background-color: #009240;
+	border-radius: 0px;
+	border: 1px solid #009240;
+	margin-top: -20px;
+}
+.navbar-default .navbar-header > a{
+	color: black;
+}
+.navbar-default .navbar-nav > li > a{
+	color: white;
+}
+.navbar-default .navbar-nav{
+	float: right;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fcff00;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fcff00;
+  background-color: #005d29;
+  font-weight: bold;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #fcff00;
+    background-color: #009240;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #fcff00;
+    background-color: #009240;
+    font-weight: bold;
+}
+.dropdown-menu{
+	background-color: #C2F0C2;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+	color: #fcff00;
+    background-color: #009240;
+    font-weight: bold;
+}
+.well-sm{
+	background-color: #009240; 
+	color: white;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+}
+.form-group{
+	margin-left: 60px;
+	margin-right: 60px;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    position: static;
+}
+.carousel {
+  position: static;
+}
+.carousel-inner {
+  position: static;
+}
+.carousel-inner > .item {
+  position: static;
+}
+.carousel-control {
+  position: static;
+}
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+  position: static;
+}
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+  float: left;
+  margin-left: 30px;
+  margin-top: -300px;
+}
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+  float: right;
+  margin-right: 40px;
+  margin-top: -300px;
+}
+.carousel-caption{
+	position: static;
+	margin-top: -146px;
+}
+.caption{
+	position: static;
+	background-color: black; 
+	opacity: .5;
+	border-radius: none; 
+	padding: 10px;
+	text-indent: 10px;
+}
+.caption p{
+	text-indent: 30px;
+	font-size: 18px;
+}
+.page-header{
+	padding-left: 5px;
+	color: #056c32;
+}
+.page-header a,
+.page-header small{
+	color: #056c32;
+}
+.table-hover > tbody > tr:hover {
+  background-color: #C2F0C2;
+}
+footer{
+	margin-top: 50px;
+	border-top: 1px solid #056c32;
+	background-color: #009240;
+	padding: 15px 0px;
+	text-align: center;
+}
+footer .btn-link{
+	color: white;
+	font-weight: bold;
+}
+footer .btn-link:hover,
+footer .btn-link:focus {
+  	color: #fcff00;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  position: static;
+}
+.container .affix{
+	padding: 0px;
+}
+
+
+/************************My Stylesheet*****************************************/
+
+#baseTemplate{
+	border-left: 1px solid rgb(240,240,240);
+	border-right: 1px solid rgb(240,240,240);
+	padding: 0px;
+	box-shadow: 0px 0px 10px grey;
+}
+#indexTemplate{
+	position: static;
+}
+#loginTemplate{
+	position: static;
+}
+#aboutUs{
+	position: static;
+}
+#img{
+	width: 100%;
+	height: 100%;
+}
+#textHome{
+	text-indent: 30px; 
+	text-align: justify; 
+	font-size: 15px
+}
+#textH5{
+	font-size: 16px;
+	margin:-5px 0 18px 0;
+}
+#news_scroll{
+	width: 90%; 
+	height: 280px; 
+	overflow: auto; 
+	border: none;
+	clear:both;
+	margin-left: 30px;
+	margin-top: 40px;
+}
+#newsTable a{
+	color: orange;
+	font-size: 17px;
+}
+#newsTable tr{
+	text-indent: 5px;
+}
+#newsTable td{
+	border: none;
+}
+#news_scroll2{
+	width: 90%; 
+	height: 300px; 
+	overflow: auto; 
+	border: none;
+	clear:both;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+#eventsTable tr{
+	padding: 10px;
+}
+#eventsTable td{
+	padding: 10px;
+	color: #056c32;
+	border: none;
+}
+#eventsTable a{
+	color: orange;
+	font-size: 17px;
+}
+#viewMore{
+	float: right;
+}
+#result_news{
+	background-color: rgb(240,240,240);
+	max-width: 100%; 
+	margin-bottom: 30px;
+	margin-top: 30px;
+	border-radius: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+#result_news h4{
+	color: black;
+	font-size: 28px;
+	padding: 20px 0px 0px 0px;
+}
+#result_news p{
+	font-size: 16px;
+	padding: 0px 50px 20px 30px;
+}
+#newsSubject{
+	text-align: center;
+	margin-bottom: 5px;
+}
+#panel-def{
+	height: 30%;
+	width: 50%;
+	margin-left:25%;
+	margin-right:25%;
+	margin-top: 3%;
+}
+#alertDanger{
+	border-radius: 0px; 
+	margin-top: 40px; 
+	margin-bottom: 0px; 
+	width: 80%;
+} 
+#butn{
+	background-color: #009240;
+	margin-top: 3%; 
+	margin-bottom: 3%;
+	width: 90%;
+	color: white
+}
+#butn:hover{
+	color: #fcff00;
+  	background-color: #005d29;
+}
+#contactUs{
+	background-color: rgb(222, 222, 222);
+	/*margin-top: 75px;*/
+}
+#contactInfo h4{
+	color: orange;
+}
+#aboutUs .page-header{
+	padding: 0px 15px 15px 15px; 
+	margin-top: 30px;
+	font-family: Eras Bold ITC;
+	text-shadow: 0 0 3px gold, 0 0 5px gold;
+}
+#aboutText{
+	text-align: justify;
+	text-indent: 50px;
+	font-size: 20px;
+	margin-top: -10px;
+}
+#aboutTextH5{
+	font-size: 22px; 
+	text-align:left;
+	padding-bottom: 20px;
+	margin-top: -10px;
+}
+#block h4{
+	font-size: 19px;
+}
+#block h5{
+	font-size: 17px;
+}
+#line{
+	margin-top: -20px;
+}
+

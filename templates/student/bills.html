@@ -8,10 +8,10 @@
 		<td style=""><b>Item</b></td>
 		<td style=""><b>Amount</b></td>
 	</tr>  
-	{% for bill in bills %}
+	{% for bill in student_bills %}
 	<tr>    
-		<td>{{ bill.bill_item_name }}</td>
-		<td style="">{{  bill.balance }}</td>
+		<td>{{ bill.bill_item }}</td>
+		<td style="">{{  bill.amount }}</td>
 	</tr>
 	{% endfor %}
 	<tr>

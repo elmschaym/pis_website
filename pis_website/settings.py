@@ -20,11 +20,11 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'pis_database',                      # Or path to database file if using sqlite3.
+        'NAME': 'pis_website_db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'postgres',
         #'PASSWORD': '',
-        'PASSWORD': 'DEVELOPERS',
+        'PASSWORD': 'postgres',
 #        'PASSWORD': 'postgres',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '5432',                      # Set to empty string for default.
@@ -83,6 +83,7 @@ MEDIA_URL = '/media/'
 # Example: "/var/www/example.com/static/"
 STATIC_ROOT = ''
 
+X_FRAME_OPTIONS = 'ALLOW-FROM google.com/'
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
@@ -123,6 +124,7 @@ INSTALLED_APPS = (
     'django.contrib.humanize',
     'bootstrap3',
     'pis_website',
+    'student'
 
 
 )
@@ -135,7 +137,9 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware'
     # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.clickjacking',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (

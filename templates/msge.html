@@ -1,0 +1,10 @@
+               <p
+                {% if success == "success" %}
+                   class="alert alert-success">
+                   <b>Successfully upload</b>
+                {% elif success == "no"%}
+                   class="alert alert-danger">
+                   <b>Something wrong of the file</b> 
+                {% endif %}
+                </p>
+              <a href="/pis_admin">BACK</a>

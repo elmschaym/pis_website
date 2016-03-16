@@ -74,7 +74,8 @@ angular.module('app.controllers').controller('EventsCtrl', function($log, $scope
 
 	$scope.view_news = function(id){
 		EventsSvc.view_newsSvc(id).success(function(data,status){
-			$('#left-layout').html(data);
+
+			$('#result_news').html(data);
 		})
 		.error(function(data, status){
 			$log.log(data);

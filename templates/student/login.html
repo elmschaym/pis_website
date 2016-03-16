@@ -1,39 +1,30 @@
 {% extends 'student/base.html' %}
 
 {% block content %}
-	<div align="center" class="col-md-12" style="min-height: 300px;">
-		<form action="/student/" method="post">
-		{% csrf_token %}
-			{% if msg %}
-				<div class="alert alert-danger" style="border-radius: 0px; margin-top: 40px; margin-bottom: 0px; width: 40%;">
-					<b>{{ msg }}</b>
-				</div>
-			{% endif %}
-			<table  style="width: 40%; {% if not msg %} margin-top: 40px; {% endif %} border: 1px solid #009240;">
-				<thead>
-					<th colspan="3">
-						<h4 class="page-header" style="padding: 7px; margin: 0px; color: white; background-color: #009240;">
-							<b>STUDENT LOGIN</b>
-						</h4>
-					</th>
-				</thead>
-				<tr>
-					<td style="padding: 10px; width: 20%;"><b>Username:</b></td>
-					<td style="padding: 10px;">{{ login_form.username }}</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px;"><b>Password:</b></td>
-					<td style="padding: 10px;">{{ login_form.password }}</td>
-				</tr>
-				<tr>
-					<td style="padding: 10px;"></td>
-					<td style="padding: 10px;">
-						<button class="btn btn-default" style="width: 100%; background-color: #009240;  border-radius: 0px;">
-							<strong style="color: white;">LOGIN</strong>
-						</button>
-					</td>
-				</tr>
-			</table>
-		</form>
-	</div>      		
+
+	<div id="loginTemplate">
+		<div class="panel panel-default" align="center" id="panel-def">
+			<div class="well well-sm"><span class="glyphicon glyphicon-user"></span> STUDENT LOGIN</div>
+				<form action="/student/" method="POST">
+				{% csrf_token %}
+					{% if msg %}
+						<div class="alert alert-danger" style="border-radius: 0px; margin-top: 40px; margin-bottom: 0px; width: 80%;">
+							<b>{{ msg }}</b>
+						</div>
+					{% endif %}
+					<div class="form-group">
+					  	<label for="usr">Username</label>
+					  	{{ login_form.username }}
+				  	</div>
+				  	<div class="form-group">
+					    <label for="pwd">Password</label>
+					    {{ login_form.password }}
+				  	</div>
+				  	<div class="terform-group" >
+						<button class="btn btn-default" id="butn"><strong style="color: white;">LOGIN</strong></button>
+					</div>
+				</form>
+		</div>
+	</div>
+
 {% endblock content %}

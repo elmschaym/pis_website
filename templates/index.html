@@ -1,163 +1,174 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="img-responsive" align="center">
-      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        
-        <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
 
-        <div class="carousel-inner">
-          <div class="item active" style="height: 430px;">
-            <img src="/static/images/pic1.jpg" alt="..." style="width: 100%; height: 100%;">
-            <div class="carousel-caption" style="width: 100%; left: 0; bottom: 3px;">
-              <div class="caption" align="left" style="background-color: black; opacity: .7; border-radius: none; padding: 10px;">
-                <h2>This is a sample image caption</h2>
-                <p>This is a sample image sub-caption</p>
-              </div>
-            </div>
-          </div>
-          <div class="item" style="height: 430px;">
-            <img src="/static/images/pic2.jpg" alt="..." style="width: 100%; height: 100%;">
-            <div class="carousel-caption" style="width: 100%; left: 0; bottom: 3px;">
-              <div class="caption" align="left" style="background-color: black; opacity: .7; border-radius: none; padding: 10px;">
-                <h2>This is a sample image caption</h2>
-                <p>This is a sample image sub-caption</p>
-              </div>
-            </div>
-          </div>
-          <div class="item" style="height: 430px;">
-            <img src="/static/images/pic3.jpg" alt="..." style="width: 100%; height: 100%;">
-            <div class="carousel-caption" style="width: 100%; left: 0; bottom: 3px;">
-              <div class="caption" align="left" style="background-color: black; opacity: .7; border-radius: none; padding: 10px;">
-                <h2>This is a sample image caption</h2>
-                <p>This is a sample image sub-caption</p>
-              </div>
-            </div>
-          </div>
-        </div>
+	<div id="indexTemplate">
+	    
+	    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+		    <ol class="carousel-indicators">
+		      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		      <li data-target="#myCarousel" data-slide-to="1"></li>
+		      <li data-target="#myCarousel" data-slide-to="2"></li>
+		      <li data-target="#myCarousel" data-slide-to="3"></li>
+		    </ol>
 
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+		    <div class="carousel-inner" role="listbox">
+		      <div class="item active">
+		        <img src="/static/images/pic2.png" alt="..." id="img">
+	            <div class="carousel-caption">
+	                <div class="caption" align="left">
+	                  <h1><b>My Teacher, My Hero</b></h1>
+	                  <p>During school activities.</p>
+	                </div>
+	            </div>
+		      </div>
 
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-      </div>
-    </div>
+		      <div class="item">
+		        <img src="/static/images/pic3.png" alt="..." id="img">
+	            <div class="carousel-caption">
+	                <div class="caption" align="left">
+	                  <h1><b>Healthy Month</b></h1>
+	                  <p>During the celebration of Nutrion Month.</p>
+	                </div>
+	            </div>
+		      </div>
+		    
+		      <div class="item">
+		        <img src="/static/images/pic4.png" alt="..." id="img">
+	            <div class="carousel-caption">
+	                <div class="caption" align="left">
+	                  <h1><b>Intrams</b></h1>
+	                  <p>Students are having fun during the foundation day.</p>
+	                </div>
+	            </div>
+		      </div>
+		    </div>
 
-<div class="col-md-12" style="padding: 0px; color: #056c32;">
+		    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		      <span class="sr-only">Previous</span>
+		    </a>
+		    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		      <span class="sr-only">Next</span>
+		    </a>
+  		</div>
+	      
+	    <div class="col-md-12">
+	        <div  class="col-md-8">
+	          <div ng-init="getNews()" ng-controller="EventsCtrl" class="col-md-12">
+	            <h4 class="page-header">
+	              <a href="">
+	                <b>
+	                <small><span class="glyphicon glyphicon-calendar"></span></small>
+	                News and Announcements
+	                </b>
+	              </a>
+	            </h4> 
+	            <div class="table-responsive" id="news_scroll">
+	              <table  class="table table-condensed table-hover" id="newsTable">
+	                <tr ng-repeat="new in news_result.result">
+	                  <td>
+	                    <ul>
+	                      <li><a ng-bind="new.subject" href="#result_news" ng-click="view_news(new.id)"></a></li>
+	                    </ul>
+	                  </td>
+	                </tr>
+	              </table>
+	              <a ng-if=" news_result.a_hide == true " href="" ng-click="newsViewMore()" id="viewMore">View More</a>
+	            </div>
+	          </div>
+	          <div ng-init="getEvents()" ng-controller="EventsCtrl" class="col-md-12">
+	            <h4 class="page-header">
+	              <a href="#">
+	                <b>
+	                <small><span class="glyphicon glyphicon-calendar"></span></small>
+	                Events
+	                </b>
+	              </a>
+	            </h4> 
+	            <div class="table-responsive" id="news_scroll2">
+	              <table class="table table-condensed table-hover" id="eventsTable">
+	                <tr ng-repeat="event in events_result.result">{% verbatim %}
+	                  <td style="width: 110px;"><ul>
+	                    <li><b>{{event.month}}  {{event.date_start|date:'d'}}</b></li>
+	                  </ul></td>{% endverbatim %}
+	                  <td><a ng-bind="event.subject" href="#result_news" ng-click="view_news(event.id)"></a></td>
+	                </tr>
+	              </table>
+	              <a ng-if=" events_result.a_hide == true " href="" ng-click="newsViewMoreEvents()" id="viewMore">View More</a>
+	            </div>
+	            <div id="result_news"></div>
+	          </div>
+	        </div>
 
-	<div id='left-layout' class="col-md-8" style="padding: 0px; border-right: 1px solid rgb(240,240,240);" >
-		<div class="col-md-12">
-			<h4 class="page-header" style="padding-left: 5px;">
-				<b>
-				<small style="color: #056c32;"><span class="glyphicon glyphicon-pencil"></span></small>
-				Philosophy
-				</b>
-			</h4>
-			<p>
-				The Philippine Integrated School (PIS) Foundation Inc. in pursuant to its mission is committed to the development of young ones in the social responsibility and contribution towards the transformation of the society, to attain deeper understanding in faith in the commitment to the continuing pursuit of truth, knowledge, moral and ethical values in their chosen field and to be the center in the search of truth and excellence.
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h4 class="page-header" style="padding-left: 5px;">
-				<b>
-				<small style="color: #056c32;"><span class="glyphicon glyphicon-pencil"></span></small>
-				Vision
-				</b>
-			</h4>
-			<p>
-				The Philippine Integrated School (PIS) Foundation Inc. aims to be the lead of excellence in moulding the young ones to be academically competitive, to be the institution providing high quality standards of education, to be with the rapid change of technology, and to prepare students/pupil to be globally competitve, morally upright and socially sensitive. It seeks to promote understanding of life, religion and reality.
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h4 class="page-header" style="padding-left: 5px;">
-				<b>
-				<small style="color: #056c32;"><span class="glyphicon glyphicon-pencil"></span></small>
-				Mission
-				</b>
-			</h4>
-			<p>
-				To equip student/pupil in the higher form of academic excellence, to be a home for achievers and competitor, to supply quality manpower required for the progress of the society that is relevant and accessible to all and to promote harmonious living between Muslim and non-Muslim, and to cater quality customer reality.
-			</p>
-		</div>
-		<div class="col-md-12">
-			<h4 class="page-header" style="padding-left: 5px;  margin-bottom: 0px;">
-				<b>
-				<small style="color: #056c32;"><span class="glyphicon glyphicon-pencil"></span></small>
-				Objectives
-				</b>
-			</h4>
-			<div class="col-md-12 container">
-				<h5>
-					<b>
-						The objectives of the school are the following:
-					</b>
-				</h5>
-				<p>
-					1. To promote and advance relevant quality education in the field of language humanities, mathematics, natural sciences, social sciences, vocational educational, and information technology.
-				</p>
-				<p>
-					2. To provide scholarship grant for the fortunate but deserving students.
-				</p>
-				<p>
-					3. To promote programs that are morally beneficial that will alleviate economic problem of Filipino people.
-				</p>
-				<p>
-					4. To purchase, recieve, acquire, take, grant, hold, sell, lease, pledge, exchange, mortgage, and otherwise deal in real and personal property as transaction of its lawful affairs and are necessary or useful to carry out objectives and purposes of this institution.
-				</p>
-				<p>
-					5. To organize, establish, and operate projects or any form of enterprise connected with the growth and development of the school, which may directly on indirectly its goals and objectives.
-				</p>
-			</div>
-		</div>
+	        <div class="col-md-4">
+	          <div class="col-md-12">
+	            <h4 class="page-header">
+	              <b>
+	              <small><span class="glyphicon glyphicon-pencil"></span></small>
+	              Philosophy
+	              </b>
+	            </h4>
+	            <p id="textHome">
+	              The Philippine Integrated School (PIS) Foundation Inc. in pursuant to its mission is committed to the development of young ones in the social responsibility and contribution towards the transformation of the society, to attain deeper understanding in faith in the commitment to the continuing pursuit of truth, knowledge, moral and ethical values in their chosen field and to be the center in the search of truth and excellence.
+	            </p>
+	          </div>
+	          <div class="col-md-12">
+	            <h4 class="page-header">
+	              <b>
+	              <small><span class="glyphicon glyphicon-pencil"></span></small>
+	              Vision
+	              </b>
+	            </h4>
+	            <p id="textHome">
+	              The Philippine Integrated School (PIS) Foundation Inc. aims to be the lead of excellence in moulding the young ones to be academically competitive, to be the institution providing high quality standards of education, to be with the rapid change of technology, and to prepare students/pupil to be globally competitve, morally upright and socially sensitive. It seeks to promote understanding of life, religion and reality.
+	            </p>
+	          </div>
+	          <div class="col-md-12">
+	            <h4 class="page-header">
+	              <b>
+	              <small><span class="glyphicon glyphicon-pencil"></span></small>
+	              Mission
+	              </b>
+	            </h4>
+	            <p id="textHome">
+	              To equip student/pupil in the higher form of academic excellence, to be a home for achievers and competitor, to supply quality manpower required for the progress of the society that is relevant and accessible to all and to promote harmonious living between Muslim and non-Muslim, and to cater quality customer reality.
+	            </p>
+	          </div>
+	          <div class="col-md-12">
+	            <h4 class="page-header">
+	              <b>
+	              <small><span class="glyphicon glyphicon-pencil"></span></small>
+	              Objectives
+	              </b>
+	            </h4>
+	            <div>
+	              <h5 id="textH5">
+	                <b>
+	                  The objectives of the school are the following:
+	                </b>
+	              </h5>
+	              <p id="textHome">
+	                <b>1.</b> To promote and advance relevant quality education in the field of language humanities, mathematics, natural sciences, social sciences, vocational educational, and information technology.
+	              </p>
+	              <p id="textHome">
+	                <b>2.</b> To provide scholarship grant for the fortunate but deserving students.
+	              </p>
+	              <p id="textHome">
+	                <b>3.</b> To promote programs that are morally beneficial that will alleviate economic problem of Filipino people.
+	              </p>
+	              <p id="textHome">
+	                <b>4.</b> To purchase, recieve, acquire, take, grant, hold, sell, lease, pledge, exchange, mortgage, and otherwise deal in real and personal property as transaction of its lawful affairs and are necessary or useful to carry out objectives and purposes of this institution.
+	              </p>
+	              <p id="textHome">
+	                <b>5.</b> To organize, establish, and operate projects or any form of enterprise connected with the growth and development of the school, which may directly on indirectly its goals and objectives.
+	              </p>
+	            </div>
+	          </div>
+	        </div>
+	    </div>
 	</div>
 
-	<div  class="col-md-4">
-		<div ng-init="getNews()" ng-controller="EventsCtrl" class="col-md-12">
-			<h4 class="page-header" style="padding-left: 5px;  margin-bottom: 0px;">
-				<a  style="color: #056c32;">
-					<b>
-					<small style="color: #056c32;"><span class="glyphicon glyphicon-calendar"></span></small>
-					News
-					</b>
-				</a>
-			</h4>	
-			<div  id="news_scroll" style="width: 100%; height: 190px; overflow: auto; background-color: white; clear:both" >
-			
-			<table class="table table-condensed" style="margin: 0px;">
-				<tr ng-repeat="new in news_result.result">
-					<td ><a  ng-bind="new.subject" href="" ng-click="view_news(new.id)" style="color: orange;"></a></td>
-					<!-- <td><a  href="javascript:view_news({{ new.id }})" style="color: #696969;"> {{ new.subject }}</a></td> -->
-				</tr>
-				
-			</table>
-			
-			</div>
-			<a ng-if=" news_result.a_hide == true " href="" ng-click="newsViewMore()">view more</a>
-		</div>
-
-		<div ng-init="getEvents()" ng-controller="EventsCtrl" class="col-md-12">
-			<h4 class="page-header" style="padding-left: 5px;  margin-bottom: 0px;">
-				<a href="#" style="color: #056c32;">
-					<b>
-					<small style="color: #056c32;"><span class="glyphicon glyphicon-calendar"></span></small>
-					Events
-					</b>
-				</a>
-			</h4>	
-			<div  id="news_scroll2" style="width: 100%; height: 250px; overflow: auto; background-color: white; clear:both" >
-			<table class="table" style="margin: 0px;">
-				<tr ng-repeat="event in events_result.result" style="padding: 10px;">{% verbatim %}
-					<td style="color: inherit;" ><b style="color: #056c32;;">{{event.month}}  {{event.date_start|date:'d'}}</b> </td>{% endverbatim %}
-					<td ><a  ng-bind="event.subject" href="" ng-click="view_news(event.id)" style="color: #696969;"></a></td>
-				</tr>
-			</table>
-			</div>
-			<a ng-if=" events_result.a_hide == true " href="" ng-click="newsViewMoreEvents()">view more</a>
-
-		</div>
-	</div>
-</div>
 {% endblock content %}
+

@@ -1,38 +1,4 @@
-					<!-- <h4>
-						<b>
-              				{% if final_average > 0 %}
-          						{% if final_average >= 96 %}
-          							Excellent
-          						{% elif final_average >= 93 and final_average < 96 %}
-          							Outstanding
-          						{% endif %}
-              				{% elif q4_average > 0 %}
-          						{% if q4_average >= 96 %}
-          							Excellent
-          						{% elif q4_average >= 93 and q4_average < 96 %}
-          							Outstanding
-          						{% endif %}
-              				{% elif q3_average > 0 %}
-          						{% if q3_average >= 96 %}
-          							Excellent
-          						{% elif q3_average >= 93 and q3_average < 96 %}
-          							Outstanding
-          						{% endif %}
-              				{% elif q2_average > 0 %}
-          						{% if q2_average >= 96 %}
-          							Excellent
-          						{% elif q2_average >= 93 and q2_average < 96 %}
-          							Outstanding
-          						{% endif %}
-          					{% elif q1_average > 0 %}
-          						{% if q1_average >= 96 %}
-          							Excellent
-          						{% elif q1_average >= 93 and q1_average < 96 %}
-          							Outstanding
-          						{% endif %}
-          					{% endif %}
-      					</b>
-      				</h4> -->
+
       				<div class="alert alert-info" style="border-radius: 0px; margin-top: 20px; margin-bottom: 0px; font-size: 12px;">
 						<span class="glyphicon glyphicon-info-sign"></span>
 						The grades shown in the "Final Grade" will be temporary until you have all your grades for this school year.
@@ -46,9 +12,9 @@
     						<td style="padding: 5px;"><b>Fourth Quarter</b></td>
     						<td style="padding: 5px;"><b>Final Grade</b></td>
     					</tr>
-    					{% for name, grade in grades %}
+    					{% for grade in student_grades %}
         					<tr>
-        						<td style="padding: 5px;"><b>{{ name }}</b></td>
+        						<td style="padding: 5px;"><b>{{ grade.subject }}</b></td>
     							<td style="padding: 5px;">
     								{% if grade.q1 != None %}
     									{% if grade.q1 >= 75 %}

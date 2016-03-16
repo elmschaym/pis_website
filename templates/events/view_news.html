@@ -1,11 +1,13 @@
-<br>
 
-<div style="max-width: 90%; margin-left: 5% " >
+<div>
 {% if news %}
-<h4 class="page-header"  ><b style="color: black; " >{{news.subject}}</b></h4>
-
-	{{news.description|safe }}
-
+	<h4 id="newsSubject">
+		<b>
+			{{news.subject}}
+		</b>
+	</h4>
+	<p>
+		{{news.description|safe }}
+	</p>
 {% endif %}
-
 </div>

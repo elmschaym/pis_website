@@ -1,15 +1,11 @@
 	<table class="table table-striped" style="margin-top: 20px;">
 		<thead style="background-color: #009240;">
 			<th><b><h4 style="margin: 0px; color: #e7ebac;">Date</h4></b></th>
-			<th><b><h4 style="margin: 0px; color: #e7ebac;">Time Start</h4></b></th>
-			<th><b><h4 style="margin: 0px; color: #e7ebac;">Time End</h4></b></th>
 			<th><b><h4 style="margin: 0px; color: #e7ebac;">Remarks</h4></b></th>
 		</thead>
-		{% for data in att_and_behaviour %}
+		{% for data in student_behavior %}
 		<tr>
 			<td>{{ data.date | date:"D, N d, Y" }}</td>
-			<td>{{ data.time_start | date:"h:i A" }}</td>
-			<td>{{ data.time_end | date:"h:i A" }}</td>
 			<td>{{ data.remarks }}</td>
 		</tr>
 		{% empty %}

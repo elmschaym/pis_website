@@ -45,6 +45,45 @@
         </table>
         </div>
     {% endfor %}
+    <br>
+
+
+    <form action="student/csv_student/" method="post" enctype="multipart/form-data">{% csrf_token %}
+         <fieldset>
+ 
+            <legend> <h4> Students information upload:</h4></legend>
+            <input type="file" name="csv_file" />
+             <input type="submit" value="Upload" />
+        </fieldset>
+        
+    </form>
+     <br>
+    <form action="student/csv_financial/" method="post" enctype="multipart/form-data">{% csrf_token %}
+         <fieldset>
+            <legend> <h4> Students Financial upload:</h4></legend>
+            <input type="file" name="csv_file" />
+             <input type="submit" value="Upload" />
+        </fieldset>
+        
+    </form>
+    <br>
+    <form action="student/csv_grades/" method="post" enctype="multipart/form-data">{% csrf_token %}
+         <fieldset>
+            <legend> <h4> Students grades upload:</h4></legend>
+            <input type="file" name="csv_file" />
+             <input type="submit" value="Upload" />
+        </fieldset>
+        
+    </form>
+    <br>
+    <form action="student/csv_behavior/" method="post" enctype="multipart/form-data">{% csrf_token %}
+         <fieldset>
+            <legend> <h4> Students behavior upload:</h4></legend>
+            <input type="file" name="csv_file" />
+             <input type="submit" value="Upload" />
+        </fieldset>
+        
+    </form>
 {% else %}
     <p>{% trans "You don't have permission to edit anything." %}</p>
 {% endif %}

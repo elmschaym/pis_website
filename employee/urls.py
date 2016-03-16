@@ -8,7 +8,7 @@ from employee.views import(
 )
   
 urlpatterns = patterns('',
-                       url(r'^boardoftrustees$', view_board_of_trustess),
+                       url(r'^aboutus$', view_board_of_trustess),
                        url(r'^administrative$', administrative),
                        url(r'^execom$', execom),
                        url(r'^developers$', developers),
