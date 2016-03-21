@@ -9,22 +9,31 @@
   <br>
   <div class="panel panel-default">
     <div class="panel panel-body">
-      <form>
+    	<p
+			{% if success == "yes" %}
+			   class="alert alert-success">
+			   <b>You're Message Successfully Send</b>
+			{% elif success == "no"  %}
+			   class="alert alert-danger">
+			   <b>Message not send</b>
+			{% endif %}
+			</p>
+      <form  method="POST" action="/contact/send" >{%csrf_token%}
 		<div class="form-group"><br><br>
 		  <label>Full Name</label>
-		  <input type="text" name="name" class="form-control">
+		  <input required type="text" name="name" class="form-control">
 		</div>
 		<div class="form-group">
 		  <label>Contact Number(Cell#)</label>
-		  <input type="text" name="name" class="form-control">
+		  <input required type="text" name="c_number" class="form-control">
 		</div>
 		<div class="form-group">
 		  <label>Email</label>
-		  <input type="text" name="name" class="form-control">
+		  <input required type="text" name="email" class="form-control">
 		</div>
 		<div class="form-group">
 		  <label>Message</label>
-		  <textarea class="form-control" rows="5"></textarea>
+		  <textarea required name="message" class="form-control" rows="5"></textarea>
 		</div>
 		<div class="form-group">
 		  <button class="btn btn-primary col-md-3" type="submit"><b>Send</b></button>

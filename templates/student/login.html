@@ -8,7 +8,7 @@
 				<form action="/student/" method="POST">
 				{% csrf_token %}
 					{% if msg %}
-						<div class="alert alert-danger" style="border-radius: 0px; margin-top: 40px; margin-bottom: 0px; width: 80%;">
+						<div class="alert alert-danger" id="studentAlert">
 							<b>{{ msg }}</b>
 						</div>
 					{% endif %}
@@ -21,7 +21,7 @@
 					    {{ login_form.password }}
 				  	</div>
 				  	<div class="terform-group" >
-						<button class="btn btn-default" id="butn"><strong style="color: white;">LOGIN</strong></button>
+						<button class="btn btn-default" id="butn"><strong>LOGIN</strong></button>
 					</div>
 				</form>
 		</div>

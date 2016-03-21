@@ -9,9 +9,9 @@
 
     <link rel="shortcut icon" href="{{STATIC_URL}}images/icon.png">
 
-    <link href="/static/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="/static/css/index.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="/static/css/font-awesome-4.3.0/css/font-awesome.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="/static/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/static/css/index.css" media="all" rel="stylesheet" type="text/css">
+    <link href="/static/css/font-awesome-4.3.0/css/font-awesome.css" media="all" rel="stylesheet" type="text/css">
     
     <link rel="stylesheet" href="/static/css/style.css"> <!-- Gem style -->
     <script src="/static/js/modernizr.js"></script> <!-- Modernizr -->
@@ -19,7 +19,7 @@
     {% block extra_css %}{% endblock extra_css%}
   </head>
 
-  <body>
+  <body class="container-fluid">
     
     <div class="container" id="baseTemplate">
       <div class="container affix"> 
@@ -72,6 +72,7 @@
     {% block footer %}
       <footer class="col-md-12">
         <a class="btn btn-link" href="#">&copy; Philippine Integrated School Foundation Inc.</a>
+
         <a class="btn btn-link" href="#">All Rights Reserved 2015</a>
         <a class="btn btn-link" href="/employee/aboutus#developers">Developers</a>
         <a class="btn btn-link" href="/contact/index">Contact Us</a>
@@ -83,17 +84,16 @@
       
 
   <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/static/js/pis_website.js"></script> 
   <script type="text/javascript" src="/static/components/angular/angular.min.js"></script>
-  <script src="/static/js/main.js"></script>
+ 
   <script type="text/javascript" src="/static/angular-app/app.js"></script>
   <script src="/static/angular-app/services/events_svc.js"></script>
   <script src="/static/angular-app/controllers/events_ctrl.js"></script>
-  
+  <script src="/static/js/main.js"></script>
   {% block extra_js %}{% endblock extra_js %}
     
   </body>
-
-
-  <html>
+<html>

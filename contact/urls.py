@@ -3,4 +3,5 @@ from .views import  *
 
 urlpatterns = patterns('',
                        url(r'^index$', contact_index),
+                       url(r'^send$', contact_send),
 )

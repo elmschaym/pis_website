@@ -78,7 +78,8 @@ def csv_student(request):
 					    Section = x[18],
 					    password = x[19],
 		        		)
-		        	student.save()
+		        	#student.save()
+		        	success = True
 		        
 
     	if success:
@@ -111,7 +112,7 @@ def csv_financial(request):
                         school_year = x[3],
 
                     )
-                    st.save()
+                    #st.save()
                     success =  True
         if success:
 			return render(request,'msge.html', {'success':'success'} )
@@ -220,7 +221,7 @@ def events(request):
 
 
 def news_limit(request):
-	print 'pasok sa news_limit'
+	
 	a_hide = False
 	context = RequestContext(request)
 	#params = json.loads(request.body)

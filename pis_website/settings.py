@@ -1,9 +1,7 @@
 """
 Django settings for pis_system project.
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
-
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
@@ -19,17 +17,17 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'pis_website_db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'postgres',
-        #'PASSWORD': '',
-        'PASSWORD': 'postgres',
-#        'PASSWORD': 'postgres',
+        'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '5432',                      # Set to empty string for default.
+        'PORT': '3306',                      # Set to empty string for default.
     }
 }
+
+
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -39,7 +37,16 @@ STATIC_PATH   = os.path.join(BASE_DIR, 'static')
 MEDIA_PATH = os.path.join(BASE_DIR, 'media')
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = [ '127.0.0.1', '192.168.1.2']
+ALLOWED_HOSTS = [ 'www.pisfi.com']
+
+'''email settings'''
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'senderpis@gmail.com'
+EMAIL_HOST_PASSWORD = 'Pis1wordAdmin'
+EMAIL_PORT = 587
+# EMAIL_USE_SSL=True
+EMAIL_USE_TLS = True
 
 
 # Local time zone for this installation. Choices can be found here:
@@ -157,33 +164,4 @@ ROOT_URLCONF = 'pis_website.urls'
 WSGI_APPLICATION = 'pis_website.wsgi.application'
 
 TEMPLATE_DIRS = (TEMPLATE_PATH.replace('\\','/'),)
-
-# A sample logging configuration. The only tangible logging
-# performed by this configuration is to send an email to
-# the site admins on every HTTP 500 error when DEBUG=False.
-# See http://docs.djangoproject.com/en/dev/topics/logging for
-# more details on how to customize your logging configuration.
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    }
-}
 

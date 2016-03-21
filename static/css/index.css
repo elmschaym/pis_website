@@ -48,6 +48,14 @@
     background-color: #009240;
     font-weight: bold;
 }
+.nav-tabs > li > a {
+  border-radius: 0px 0px 0 0;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    font-weight: bold;
+}
 .well-sm{
 	background-color: #009240; 
 	color: white;
@@ -121,6 +129,15 @@
 .table-hover > tbody > tr:hover {
   background-color: #C2F0C2;
 }
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+  position: static;
+}
+.container .affix{
+	padding: 0px;
+}
+body{
+	max-width: 1200px;
+}
 footer{
 	margin-top: 50px;
 	border-top: 1px solid #056c32;
@@ -136,12 +153,7 @@ footer .btn-link:hover,
 footer .btn-link:focus {
   	color: #fcff00;
 }
-.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
-  position: static;
-}
-.container .affix{
-	padding: 0px;
-}
+
 
 
 /************************My Stylesheet*****************************************/
@@ -252,20 +264,39 @@ footer .btn-link:focus {
 	margin-bottom: 0px; 
 	width: 80%;
 } 
+#studentAlert{
+	border-radius: 0px; 
+	margin-top: 20px; 
+	margin-bottom: 30px; 
+	width: 80%;
+}
+#studentPic{
+	border: 1px solid #888;
+	margin-bottom: 15px;
+}
 #butn{
 	background-color: #009240;
 	margin-top: 3%; 
 	margin-bottom: 3%;
-	width: 90%;
-	color: white
+	width: 80%;
+	color: white;
 }
 #butn:hover{
 	color: #fcff00;
-  	background-color: #005d29;
+}
+#logoutBtn{
+	width: 100%; 
+	background-color: #009240;  
+	border-radius: 0px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	color: white;
+}
+#logoutBtn:hover{
+	color: yellow;
 }
 #contactUs{
 	background-color: rgb(222, 222, 222);
-	/*margin-top: 75px;*/
 }
 #contactInfo h4{
 	color: orange;
