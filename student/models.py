@@ -44,7 +44,7 @@ class Student(models.Model):
     last_school_att_address = models.CharField(max_length=100, blank=True)
     acad_status = models.CharField(max_length=45, choices=ACAD_STATUS)
     image_path = models.FileField(upload_to='students')
-    privilege = models.CharField(max_length=100, blank=True, null=True)
+    privilege = models.CharField(max_length=100, blank=True)
     year_level = models.IntegerField(choices=YEAR_LEVEL)
     cell_no = models.CharField(max_length=11)
     Section = models.CharField(max_length=50, blank=True)

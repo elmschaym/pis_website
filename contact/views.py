@@ -18,7 +18,7 @@ def contact_send(request):
 	c_number = request.POST.get('c_number')
 	email = request.POST.get('email')
 	message_form = request.POST.get('message')
-	subject, from_email, to_email = 'PISFI Website', 'senderpis@gmail.com', 'hanifnasser30@gmail.com'
+	subject, from_email, to_email = 'PISFI Website', 'senderpis@gmail.com', 'philippineintegratedschool@gmail.com'
 	text_content = "From "+email+" ("+full_name+"), \n\nPhone Number: "+c_number+" \n\n\n"+message_form
 	#html_content = "From "+email+" ("+full_name+"), "+c_number+""+"<br/><br/><br/>"+message_form % (full_name, email, email)
 	message      = EmailMultiAlternatives(subject, text_content, from_email, [to_email])

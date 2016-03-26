@@ -51,37 +51,65 @@ def csv_student(request):
         file_upload = False
         success = False
         for x in reader:
+        	
         	if x[0] =='Student':
         		file_upload = True
         	else:
+        		if Student.objects.filter(studentid=x[0]).exists():
+        				student_update = Student.objects.get(studentid=x[0])
         		if file_upload:
-		        	student = Student.objects.update_or_create(
+        			
+        			if Student.objects.filter(studentid=x[0]).exists():
+						student_update.firstname = x[1]
+						student_update.middlename = x[2]
+						student_update.lastname = x[3]
+						student_update.gender = x[4]
+						student_update.date_of_birth =x[5]
+						student_update.date_admitted = x[6]
+						student_update.address = x[7]
+						student_update.mother_name = x[8]
+						student_update.father_name = x[9]
+						student_update.mother_occ =  x[10]
+						student_update.father_occ = x[11]
+						student_update.last_school_att = x[12]
+						student_update.last_school_att_address = x[13]
+						student_update.acad_status = x[14]
+						student_update.privilege = x[15]
+						student_update.year_level = x[16]
+						student_update.cell_no = x[17]
+						student_update.Section = x[18]
+						student_update.password = x[19]
+						success = True
 
-						studentid = x[0],
-					    firstname = x[1],
-					    middlename = x[2],
-					    lastname = x[3],
-					    gender = x[4],
-					    date_of_birth =x[5],
-					    date_admitted = x[6],
-					    address = x[7],
-					    mother_name = x[8],
-					    father_name = x[9],
-					    mother_occ =  x[10],
-					    father_occ = x[11],
-					    last_school_att = x[12],
-					    last_school_att_address = x[13],
-					    acad_status = x[14],
-					    privilege = x[15],
-					    year_level = x[16],
-					    cell_no = x[17],
-					    Section = x[18],
-					    password = x[19],
-		        		)
-		        	#student.save()
-		        	success = True
-		        
+			        else:
 
+			        		student_create = Student(
+
+								studentid = x[0],
+							    firstname = x[1],
+							    middlename = x[2],
+							    lastname = x[3],
+							    gender = x[4],
+							    date_of_birth =x[5],
+							    date_admitted = x[6],
+							    address = x[7],
+							    mother_name = x[8],
+							    father_name = x[9],
+							    mother_occ =  x[10],
+							    father_occ = x[11],
+							    last_school_att = x[12],
+							    last_school_att_address = x[13],
+							    acad_status = x[14],
+							    privilege = x[15],
+							    year_level = x[16],
+							    cell_no = x[17],
+							    Section = x[18],
+							    password = x[19],
+			        		)
+				        	student_create.save()
+				        	success = True
+				student_update.save()
+		      
     	if success:
 			return render(request,'msge.html', {'success':'success'} )
     else:
@@ -104,16 +132,18 @@ def csv_financial(request):
             if x[0] =='Financial':
                 file_upload = True
             else:
+            	
                 if file_upload:
-                    st = StudentFinancial(
-                        student_id = x[0],
-                        bill_item = x[1],
-                        amount = x[2],
-                        school_year = x[3],
+                	if Student.objects.filter(studentid= x[0]).exists():
+	                    st = StudentFinancial(
+	                        student_id = x[0],
+	                        bill_item = x[1],
+	                        amount = x[2],
+	                        school_year = x[3],
 
-                    )
-                    #st.save()
-                    success =  True
+	                    )
+	                    st.save()
+	                    success =  True
         if success:
 			return render(request,'msge.html', {'success':'success'} )
     else:
@@ -162,7 +192,7 @@ def real_monitoring(request):
 		'real_monitor.html',
 		{
 			'system_name' : SYSTEM_NAME + ' - Real Monitoring',
-			'url_monitor':'http://192.168.0.10',
+			'url_monitor':'http://192.168.0.159',
 			'rtm':'active',
 		},
 		RequestContext(request)
