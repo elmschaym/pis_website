@@ -66,7 +66,7 @@ def getStudentBills(student_id):
 
 def school_year_funtion():
     month_s = datetime.datetime.now().month
-    if month_s > 3:
+    if month_s > 5:
         today_year =  datetime.datetime.now().year
     else:
         today_year =  datetime.datetime.now().year
@@ -106,7 +106,8 @@ def index_view(request):
                  'student_behavior': student_behavior,
                  'student_hov' : 'active',
                  'total': sum([x.amount for x in student_bills]),
-                 'bills':True
+                 'bills':True,
+                 'school_year' : school_year
             },
             RequestContext(request)
         )
