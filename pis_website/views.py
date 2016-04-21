@@ -168,18 +168,19 @@ def csv_grades(request):
                 file_upload = True
             else:
                 if file_upload:
-                    st = StudentGrades.objects.update_or_create(
-                        student_id = x[0],
-                        subject = x[1],
-                        q1 = x[2],
-                        q2 = x[3],
-                        q3 = x[4],
-                        q4 = x[5],
-                        final = x[6],
-                        school_year = x[7] 
+                	if Student.objects.filter(studentid= x[0]).exists():
+	                    st = StudentGrades.objects.update_or_create(
+	                        student_id = x[0],
+	                        subject = x[1],
+	                        q1 = x[2],
+	                        q2 = x[3],
+	                        q3 = x[4],
+	                        q4 = x[5],
+	                        final = x[6],
+	                        school_year = x[7] 
 
-                    )
-                    success =  True
+	                    )
+	                    success =  True
         if success:
             return render(request,'msge.html', {'success':'success'} )
     else:

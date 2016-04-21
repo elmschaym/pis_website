@@ -68,40 +68,6 @@
 	margin-left: 60px;
 	margin-right: 60px;
 }
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-    position: static;
-}
-.carousel {
-  position: static;
-}
-.carousel-inner {
-  position: static;
-}
-.carousel-inner > .item {
-  position: static;
-}
-.carousel-control {
-  position: static;
-}
-.carousel-control .icon-prev,
-.carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-left,
-.carousel-control .glyphicon-chevron-right {
-  position: static;
-}
-.carousel-control .icon-prev,
-.carousel-control .glyphicon-chevron-left {
-  float: left;
-  margin-left: 30px;
-  margin-top: -300px;
-}
-.carousel-control .icon-next,
-.carousel-control .glyphicon-chevron-right {
-  float: right;
-  margin-right: 40px;
-  margin-top: -300px;
-}
 .carousel-caption{
 	position: static;
 	margin-top: -146px;
@@ -132,8 +98,27 @@
 .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
   position: static;
 }
-.container .affix{
-	padding: 0px;
+.flex-direction-nav a {
+	width: 41px; 
+	height: 65px; 
+	margin: -20px 0 0; 
+	background: url(/static/images/rightleft.png) no-repeat 0 0; 
+	position: absolute; 
+	top: 43%; 
+	text-indent: -9999px; 
+}
+.flex-direction-nav .flex-next {
+	background-position: 100% 0; 
+	right: 5px; 
+}
+.flex-direction-nav .flex-prev {
+	left: 5px;
+}
+.flexslider .flex-direction-nav a.flex-prev,
+.flexslider .flex-direction-nav a.flex-next {
+    -moz-transition: none;
+    -webkit-transition: none;
+    transition: none;
 }
 body{
 	max-width: 1200px;
@@ -163,6 +148,11 @@ footer .btn-link:focus {
 	border-right: 1px solid rgb(240,240,240);
 	padding: 0px;
 	box-shadow: 0px 0px 10px grey;
+}
+#head{
+	position: fixed; 
+	padding: 0px;
+	z-index: 100;
 }
 #indexTemplate{
 	position: static;
@@ -328,4 +318,30 @@ footer .btn-link:focus {
 #line{
 	margin-top: -20px;
 }
-
+#slider li{
+	width: 454px; 
+	float: left; 
+	display: block;
+}
+#carousel {
+	margin-top: -90px;
+	margin-bottom: 15px;
+}
+#carousel li {
+	margin-right: 0px;
+}
+#carousel img { 
+	display: block; 
+	cursor: pointer;
+	border: 1px solid gray;
+	border-radius: 13px;
+	height: 125px;
+	width: 200px;
+}
+#carousel img:hover { 
+	opacity: 0.7;
+}
+#carousel .flex-active-slide img { 
+	opacity: 0.6; 
+	cursor: default;
+}
